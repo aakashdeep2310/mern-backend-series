@@ -2,6 +2,11 @@ const express = require('express')
 const app = express();
 
 const PORT = 3000;
+const connectDB = require('./db')
+
+connectDB()
+
+
 
 app.get('/', (req, res)=>{
     console.log("Hey i am inside home page route handler")
