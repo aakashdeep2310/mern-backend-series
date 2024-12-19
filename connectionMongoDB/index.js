@@ -3,10 +3,12 @@ const app = express();
 
 const PORT = 3000;
 const connectDB = require('./db')
+const users = require('./routes/users');
 
+app.use(express.json())
 connectDB()
 
-
+app.use('/api', users);
 
 app.get('/', (req, res)=>{
     console.log("Hey i am inside home page route handler")
